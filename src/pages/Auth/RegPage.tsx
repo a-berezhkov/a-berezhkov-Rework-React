@@ -1,9 +1,8 @@
-import React from 'react'
+import React  from "react";
+import SignUpForm from "../../features/auth/SignUpForm/SignUpForm";
 
 function RegPage(): JSX.Element {
-  return (
-    <div>RegPage</div>
-  )
+  return <SignUpForm />;
 }
 
-export default RegPage
+export default RegPage;
