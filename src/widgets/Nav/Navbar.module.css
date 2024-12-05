@@ -1,0 +1,52 @@
+/* Navbar.module.css */
+
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #001529; /* Default Ant Design dark theme */
+    padding: 0 16px;
+    height: 64px;
+  }
+  
+  /* Logo styling */
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Logo link styling */
+  .logo a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Menu styling */
+  .menu {
+    flex: 1;
+    justify-content: flex-end; /* Align menu items to the right */
+  }
+/* Menu styling */
+.menu {
+    flex: 1;
+    justify-content: flex-end; /* Align menu items to the right */
+  }
+  
+  /* User menu dropdown styling */
+  .userMenu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .userDropdown {
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .userDropdown:hover {
+    color: #1890ff; /* Highlight on hover */
+  }  
