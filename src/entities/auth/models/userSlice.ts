@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { UserType } from "../types/UserType";
-import { signUp } from "./userThunks";
+import { signIn, signUp } from "./userThunks";
 
 type UserState = {
   user: UserType | null;
@@ -29,6 +29,19 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addCase(signUp.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload?.message || "Failed to sign up";
+      })
+
+      .addCase(signIn.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(signIn.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload.user;
+        state.error = null;
+      })
+      .addCase(signIn.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload?.message || "Failed to sign up";
       });

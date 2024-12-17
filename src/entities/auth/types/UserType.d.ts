@@ -11,3 +11,5 @@ export interface SignUpResponseType {
   accessToken: string;
   user: UserType;
 }
+
+

@@ -1,9 +1,7 @@
+import SignInForm from "../../features/auth/SignInForm/SignInForm";
+
 function AuthPage(): JSX.Element {
-  return (
-    <form>
-      
-    </form>
-  )
+  return <SignInForm />;
 }
 
-export default AuthPage
+export default AuthPage;

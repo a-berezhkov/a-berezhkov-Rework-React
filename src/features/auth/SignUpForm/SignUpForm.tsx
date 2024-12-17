@@ -3,7 +3,7 @@ import { useAppDispatch } from "../../../app/store/store";
 import { signUp } from "../../../entities/auth/models/userThunks";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined, } from "@ant-design/icons";
-import styles from "./RegistrationForm.module.css"; // Import CSS module
+import styles from "./SignUpForm.module.css"; // Import CSS module
 import Title from "antd/es/typography/Title";
 
 function SignUpForm() {
