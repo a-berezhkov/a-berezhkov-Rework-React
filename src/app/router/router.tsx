@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import AuthPage from "../../pages/Auth/AuthPage";
 import RegPage from "../../pages/Auth/RegPage";
 import NotFound from "../../shared/ui/NotFound";
+import AttendancePage from "../../pages/Profile/AttendancePage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "reg",
         element: <RegPage />,
+      },
+      {
+        path: "attendance",
+        element: <AttendancePage />,
       },
     ],
   },

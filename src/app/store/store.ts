@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import userSlice from "../../entities/auth/models/userSlice";
 import errorReducer from "./errorSlice";
+import attendanceSlice from "../../entities/profile/models/attendanceSlice";
 
 export const store = configureStore({
   reducer: {
     users: userSlice,
     errors: errorReducer,
+    attendances: attendanceSlice,
   },
 });
 
