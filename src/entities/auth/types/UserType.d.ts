@@ -8,7 +8,7 @@ export interface UserType {
 }
 
 export interface SignUpResponseType {
-  accessToken: string;
+  access: string;
   user: UserType;
 }
 
