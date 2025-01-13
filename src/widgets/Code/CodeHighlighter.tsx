@@ -10,7 +10,11 @@ interface CodeHighlighterProps {
   title?: string; // Optional title for the card
 }
 
-const CodeHighlighter: React.FC<CodeHighlighterProps> = ({ code, language = "javascript", title }) => {
+const CodeHighlighter: React.FC<CodeHighlighterProps> = ({
+  code,
+  language = "javascript",
+  title,
+}) => {
   const [copied, setCopied] = useState(false);
 
   // Function to handle copying to clipboard
@@ -26,24 +30,35 @@ const CodeHighlighter: React.FC<CodeHighlighterProps> = ({ code, language = "jav
   };
 
   return (
-    <Card
-      title={title || "Code Example"}
-      bordered
-      extra={
-        <Tooltip title={copied ? "Copied!" : "Copy to clipboard"}>
-          <Button
-            type="text"
-            icon={copied ? <CheckOutlined style={{ color: "green" }} /> : <CopyOutlined />}
-            onClick={handleCopy}
-          />
-        </Tooltip>
-      }
-      style={{ margin: "20px", position: "relative" }}
-    >
-      <SyntaxHighlighter language={language} style={dracula} wrapLongLines>
+    <div style={{ position: "relative" }}>
+      <Tooltip
+        title={copied ? "Copied!" : "Copy to clipboard"}
+        placement="left"
+      >
+        <Button
+          style={{
+            color: "white",
+            position: "absolute",
+            top: "10px",
+            right: "10px",  
+            zIndex: 1000,  
+          }}
+          type="text"
+          icon={
+            copied ? (
+              <CheckOutlined style={{ color: "green" }} />
+            ) : (
+              <CopyOutlined />
+            )
+          }
+          onClick={handleCopy}
+        />
+      </Tooltip>
+
+      <SyntaxHighlighter language={language} style={dracula} wrapLongLines={true}>
         {code}
       </SyntaxHighlighter>
-    </Card>
+    </div>
   );
 };
 

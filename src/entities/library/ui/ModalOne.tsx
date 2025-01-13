@@ -20,13 +20,15 @@ function ModalOne({
     <Modal
       title={
         selectedLibrary?.id
-          ? `Название пакета: ${selectedLibrary.name} [ID ${selectedLibrary.id}]`
+          ? `${selectedLibrary.name} [ID ${selectedLibrary.id}]`
           : "Информация"
       }
-      width={"50%"}
+      width={"80%"}
+      
       visible={!!selectedLibrary}
       onCancel={handleCloseModal}
       footer={null}
+     // style={{ minWidth: "500px" }}
     >
       {detailsLoading ? (
         <Spin size="large" />

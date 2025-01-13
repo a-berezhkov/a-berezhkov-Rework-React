@@ -15,12 +15,8 @@ export const getAllThunk = createAsyncThunk<
   { rejectValue: RejectValue }
 >("library/getAll", async (_, { dispatch, rejectWithValue }) => {
   try {
-    console.log("try");
-    
     return await LibraryApi.get();
- 
   } catch (error) {
-    console.log("error");
     const err = error as AxiosError<{
       message: Record<string, string>;
       status: string;

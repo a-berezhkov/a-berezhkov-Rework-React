@@ -66,10 +66,13 @@ function LibraryList(): JSX.Element {
             placeholder="Поиск пакета по имени"
             allowClear
             onChange={(e) => setSearchTerm(e.target.value)}
-            style={{ marginBottom: "20px" }}
+            size="large"
+            style={{
+              marginBottom: "20px",
+            }}
           />
 
-          <div className={styles.library__list}>
+          <div>
             <List
               bordered={false}
               dataSource={filteredLibraries ? filteredLibraries : []}
