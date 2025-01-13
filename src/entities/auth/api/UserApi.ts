@@ -3,7 +3,7 @@ import {
   axiosInstance,
   setAccessToken,
 } from "../../../shared/lib/axiosInstance";
-import { SignInFormType } from "../../../features/auth/SignInForm/SignInForm";
+import { SignInFormType } from "../../../features/auth/SignInForm/SignInForm.d";
 
 /**
  * User API class
@@ -34,7 +34,7 @@ export default class UserApi {
       "users/auth/login/",
       data
     );
-    setAccessToken(response.data.accessToken);
+    setAccessToken(response.data.access); // TODO fix it
     return response.data;
   }
 }
