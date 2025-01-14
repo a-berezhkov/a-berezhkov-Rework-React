@@ -25,7 +25,7 @@ function ModalOne({
       }
       width={"80%"}
       
-      visible={!!selectedLibrary}
+      open={!!selectedLibrary}
       onCancel={handleCloseModal}
       footer={null}
      // style={{ minWidth: "500px" }}

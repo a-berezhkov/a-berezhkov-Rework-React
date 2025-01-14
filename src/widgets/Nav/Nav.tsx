@@ -2,11 +2,34 @@ import { Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import styles from "./Navbar.module.css";
 import { useAppSelector } from "../../app/store/store";
+import { ItemType, MenuItemType } from "antd/es/menu/interface";
 
 const { Header } = Layout;
 
 function Nav() {
   const user = useAppSelector((state) => state.users.user);
+
+  const items: ItemType<MenuItemType>[] = [
+    {
+      key: "3",
+      label: <Link to="/library">Библиотеки Python</Link>,
+    },
+    {
+      key: "1",
+      label: <Link to="/auth">Авторизация</Link>,
+    },
+    {
+      key: "2",
+      label: <Link to="/reg">Регистрация</Link>,
+    },
+    user?.username
+      ? {
+          key: "5",
+          label: <span className={styles.userDropdown}>{user.username}</span>,
+        }
+      : null,
+  ];
+
   return (
     <>
       <Layout>
@@ -17,23 +40,8 @@ function Nav() {
             mode="horizontal"
             defaultSelectedKeys={["1"]}
             className={styles.menu}
-          >
-            <Menu.Item key="3">
-              <Link to={"/library"}> Библиотеки</Link>
-            </Menu.Item>
-            <Menu.Item key="1">
-              <Link to={"/auth"}> Авторизация</Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Link to={"/reg"}> Регистрация</Link>
-            </Menu.Item>
-
-            {user?.username && (
-              <Menu.Item key="5" className={styles.userMenu}>
-                <span className={styles.userDropdown}>{user.username}</span>
-              </Menu.Item>
-            )}
-          </Menu>
+            items={items}
+          />
         </Header>
       </Layout>
     </>
