@@ -1,15 +1,13 @@
 import type { SignInFormType } from "./SignInForm.d";
-import { useAppDispatch, useAppSelector } from "../../../app/store/store";
+import { useAppDispatch } from "../../../app/store/store";
 import { signIn } from "../../../entities/auth/models/userThunks";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import styles from "./SignInForm.module.css"; // Import CSS module
 import Title from "antd/es/typography/Title";
-import ErrorDisplay from "../../../shared/ui/ErrorDisplay";
 
 function SignInForm() {
   const dispatch = useAppDispatch();
- 
 
   const onFinish = async (values: SignInFormType) => {
     await dispatch(signIn(values));
@@ -28,7 +26,7 @@ function SignInForm() {
         <Title level={2} className={styles.formHeading}>
           Авторизация
         </Title>
-         
+
         {/* username */}
         <Form.Item
           label="Логин"

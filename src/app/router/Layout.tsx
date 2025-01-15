@@ -4,11 +4,11 @@ import ErrorDisplay from "../../shared/ui/ErrorDisplay";
 
 function Layout(): JSX.Element {
   return (
-    <>
+    <div style={{ minHeight: "100vh" }}>
       <Nav />
       <ErrorDisplay />
       <Outlet />
-    </>
+    </div>
   );
 }
 

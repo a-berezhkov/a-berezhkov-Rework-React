@@ -20,7 +20,7 @@ export default class UserApi {
       "users/data/",
       data
     );
-    setAccessToken(response.data.accessToken);
+    setAccessToken(response.data.access);
     return response.data;
   }
 
